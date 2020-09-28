@@ -42,23 +42,23 @@ class AddressView: UIView {
     
     lazy var dottedLine: UIView =  {
         let dottedLine = UIView()
-        dottedLine.backgroundColor = .red
-        //dottedLine.createDottedLine(width: 10.0, color: UIColor.red.cgColor)
+       // dottedLine.backgroundColor = .red
+       // //dottedLine.createDottedLine(width: 10.0, color: UIColor.red.cgColor)
         return dottedLine
     }()
     
     lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [horizontalStackView, dottedLine])
-        stackView.spacing = 10
+        stackView.spacing = 5
         stackView.distribution = .fillProportionally
         stackView.axis = .vertical
-        stackView.backgroundColor = .yellow
+       // stackView.backgroundColor = .yellow
         return stackView
     }()
     
     //MARK: Functions
     func setup() {
-        backgroundColor = .blue
+     //   backgroundColor = .blue
         addSubviewsWithAutoLayout([verticalStackView])
         
         var constraints = verticalStackView.anchor(to: self, with: UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5))
@@ -68,6 +68,7 @@ class AddressView: UIView {
             pinImage.heightAnchor.constraint(equalToConstant: 48),
             dottedLine.heightAnchor.constraint(equalToConstant: 5)
         ])
+        
         NSLayoutConstraint.activate(constraints)
     }
     

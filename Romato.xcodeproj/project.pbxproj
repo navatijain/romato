@@ -15,8 +15,15 @@
 		930931B224F0998800E1B2E9 /* RomatoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930931B124F0998800E1B2E9 /* RomatoUITests.swift */; };
 		930931C224F09DD800E1B2E9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930931C124F09DD800E1B2E9 /* HomeViewController.swift */; };
 		930931C424F09E0C00E1B2E9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930931C324F09E0C00E1B2E9 /* HomeViewModel.swift */; };
+		933E2C102517B35200FC9E63 /* FilterViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E2C0F2517B35200FC9E63 /* FilterViewComponent.swift */; };
+		933E2C122517B4B000FC9E63 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E2C112517B4B000FC9E63 /* Colors.swift */; };
+		933E2C142517B52700FC9E63 /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E2C132517B52700FC9E63 /* UIColor+Utility.swift */; };
+		933E2C162517BE9D00FC9E63 /* FilterViewScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E2C152517BE9D00FC9E63 /* FilterViewScrollView.swift */; };
+		933E2C1825224FA200FC9E63 /* ScrollViewWithContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E2C1725224FA100FC9E63 /* ScrollViewWithContainerView.swift */; };
 		934853022505815700EDD2AA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934853012505815700EDD2AA /* UIView+Extension.swift */; };
 		93485305250583CF00EDD2AA /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93485304250583CF00EDD2AA /* AddressView.swift */; };
+		9380088A2516CA100048D2A8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938008892516CA100048D2A8 /* SearchBar.swift */; };
+		9380088E2516CC040048D2A8 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9380088D2516CC040048D2A8 /* LocalizedString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +58,15 @@
 		930931B324F0998800E1B2E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		930931C124F09DD800E1B2E9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		930931C324F09E0C00E1B2E9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		933E2C0F2517B35200FC9E63 /* FilterViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewComponent.swift; sourceTree = "<group>"; };
+		933E2C112517B4B000FC9E63 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		933E2C132517B52700FC9E63 /* UIColor+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utility.swift"; sourceTree = "<group>"; };
+		933E2C152517BE9D00FC9E63 /* FilterViewScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewScrollView.swift; sourceTree = "<group>"; };
+		933E2C1725224FA100FC9E63 /* ScrollViewWithContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewWithContainerView.swift; sourceTree = "<group>"; };
 		934853012505815700EDD2AA /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		93485304250583CF00EDD2AA /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		938008892516CA100048D2A8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		9380088D2516CC040048D2A8 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,7 @@
 		9309318E24F0998300E1B2E9 /* Romato */ = {
 			isa = PBXGroup;
 			children = (
+				9380088C2516CBEF0048D2A8 /* Constants */,
 				934853032505839900EDD2AA /* Components */,
 				934853002505811C00EDD2AA /* Extensions */,
 				930931C024F09D8800E1B2E9 /* ViewControllers */,
@@ -153,6 +168,7 @@
 		934853002505811C00EDD2AA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				933E2C132517B52700FC9E63 /* UIColor+Utility.swift */,
 				934853012505815700EDD2AA /* UIView+Extension.swift */,
 			);
 			path = Extensions;
@@ -162,8 +178,21 @@
 			isa = PBXGroup;
 			children = (
 				93485304250583CF00EDD2AA /* AddressView.swift */,
+				938008892516CA100048D2A8 /* SearchBar.swift */,
+				933E2C0F2517B35200FC9E63 /* FilterViewComponent.swift */,
+				933E2C152517BE9D00FC9E63 /* FilterViewScrollView.swift */,
+				933E2C1725224FA100FC9E63 /* ScrollViewWithContainerView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		9380088C2516CBEF0048D2A8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9380088D2516CC040048D2A8 /* LocalizedString.swift */,
+				933E2C112517B4B000FC9E63 /* Colors.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,11 +324,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933E2C162517BE9D00FC9E63 /* FilterViewScrollView.swift in Sources */,
+				933E2C142517B52700FC9E63 /* UIColor+Utility.swift in Sources */,
+				9380088A2516CA100048D2A8 /* SearchBar.swift in Sources */,
+				933E2C122517B4B000FC9E63 /* Colors.swift in Sources */,
+				933E2C102517B35200FC9E63 /* FilterViewComponent.swift in Sources */,
+				933E2C1825224FA200FC9E63 /* ScrollViewWithContainerView.swift in Sources */,
 				9309319024F0998300E1B2E9 /* AppDelegate.swift in Sources */,
 				9309319224F0998300E1B2E9 /* SceneDelegate.swift in Sources */,
 				930931C424F09E0C00E1B2E9 /* HomeViewModel.swift in Sources */,
 				934853022505815700EDD2AA /* UIView+Extension.swift in Sources */,
 				930931C224F09DD800E1B2E9 /* HomeViewController.swift in Sources */,
+				9380088E2516CC040048D2A8 /* LocalizedString.swift in Sources */,
 				93485305250583CF00EDD2AA /* AddressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
