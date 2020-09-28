@@ -29,7 +29,6 @@ class ScrollViewWithContainerView: UIScrollView {
         containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
         containerView.topAnchor.constraint(equalTo: self.topAnchor),
         containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor)]
-        
         NSLayoutConstraint.activate(constraints)
     }
     

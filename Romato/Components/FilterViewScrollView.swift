@@ -34,16 +34,15 @@ class FilterViewScrollView: UIView {
     
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: filterComponentsList)
-        stackView.spacing = 20
+        stackView.spacing = 10
         stackView.axis = .horizontal
-        stackView.alignment = .leading
+        stackView.alignment = .center
         stackView.distribution = .fillProportionally
         return stackView
     }()
     
     func setup() {
         setBorder()
-        
     }
     
     func setBorder() {
@@ -52,12 +51,9 @@ class FilterViewScrollView: UIView {
     }
     
     func setConstraints() {
-        scrollView.backgroundColor = .red
         scrollView.containerView.addSubviewsWithAutoLayout(stackView)
-        //        addSubviewsWithAutoLayout([stackView])
-        //        let constraints = stackView.anchor(to: self, with: UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5))
         addSubviewsWithAutoLayout(scrollView)
-        var constraints = stackView.anchor(to: scrollView.containerView, with: UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5))
+        var constraints = stackView.anchor(to: scrollView.containerView, with: UIEdgeInsets(top: -1, left: 5, bottom: -1, right: -5))
         constraints.append(contentsOf: scrollView.anchor(to: self))
         NSLayoutConstraint.activate(constraints)
     }

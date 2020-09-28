@@ -17,16 +17,15 @@ class FilterViewComponent: UIView {
     
     lazy var label: UILabel = {
         let label = UILabel()
-      // label.numberOfLines = 0
-        label.textColor = .blue
-        //label.setContentCompressionResistancePriority(.required, for: .vertical)
+        label.textColor = Colors.Brand.gray200
+        label.textAlignment = .center
         return label
     }()
     
     func setup() {
         setBorder()
         addSubviewsWithAutoLayout([label])
-        let spacing: CGFloat = 10
+        let spacing: CGFloat = 5
         let constraints = label.anchor(to: self,with: UIEdgeInsets(top: spacing , left: spacing, bottom: -spacing, right: -spacing))
         NSLayoutConstraint.activate(constraints)
     }

@@ -89,7 +89,7 @@ class HomeViewController: UIViewController {
             filterViewScrollView.leadingAnchor.constraint(equalTo: addressView.leadingAnchor),
             filterViewScrollView.trailingAnchor.constraint(equalTo: addressView.trailingAnchor),
             filterViewScrollView.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -10),
-            filterViewScrollView.heightAnchor.constraint(equalToConstant: 60),
+            filterViewScrollView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60),
             tableView.leadingAnchor.constraint(equalTo: filterViewScrollView.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: filterViewScrollView.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
