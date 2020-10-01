@@ -17,7 +17,7 @@ class HomeViewModel {
         case notLoaded, loading, loaded, error
     }
     
-    var dataSource : [CellType] = [.filterRow, .blankSpace,.collectionsScroll, .blankSpace, .restaurantCard]
+    var dataSource : [CellType] = [.collectionsHeader, .blankSpace,.collectionsScroll, .blankSpace, .restaurantCard,.restaurantCard,.restaurantCard,.restaurantCard]
     
     private var state: State = .notLoaded {
         didSet {

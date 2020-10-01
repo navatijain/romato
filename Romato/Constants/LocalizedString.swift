@@ -21,4 +21,7 @@ struct LocalizedString {
         static let cafe = "Cafes"
         static let openNow = "Open Now"
     }
+    
+    static let collections = "Collections"
+    static let seeAll = "See All"
 }

@@ -35,7 +35,6 @@ public extension UIView {
         return constraints
     }
     
-    
     func anchor(to layoutGuide: UILayoutGuide, with inset: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
         let constraints = [
             leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: inset.left),
@@ -59,5 +58,3 @@ public extension UIView {
           layer.addSublayer(caShapeLayer)
        }
 }
-
-
