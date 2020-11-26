@@ -13,7 +13,12 @@ class RestaurantCardCell: UITableViewCell {
     
     private func setupView() {
         contentView.addSubviewsWithAutoLayout([card])
-        let constraints = card.anchor(to: contentView)
+        let constraints = [
+            card.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            card.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+            card.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            card.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+        ]
         NSLayoutConstraint.activate(constraints)
     }
     

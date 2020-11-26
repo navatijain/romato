@@ -17,9 +17,9 @@ class RestaurantCardView: UIView {
         
         let constraints = [
             imageCard.topAnchor.constraint(equalTo: self.topAnchor),
-            imageCard.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
-            imageCard.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            imageCard.bottomAnchor.constraint(equalTo: restaurantSummaryCard.topAnchor, constant: -10),
+            imageCard.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            imageCard.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            imageCard.bottomAnchor.constraint(equalTo: restaurantSummaryCard.topAnchor),
             restaurantSummaryCard.leadingAnchor.constraint(equalTo: imageCard.leadingAnchor),
             restaurantSummaryCard.trailingAnchor.constraint(equalTo: imageCard.trailingAnchor),
             restaurantSummaryCard.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -28,10 +28,9 @@ class RestaurantCardView: UIView {
     }
     
     func setBorder(){
-        layer.masksToBounds = true
-        layer.cornerRadius = 0.5
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.red.cgColor
+        layer.cornerRadius = 10
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.gray.cgColor
     }
 
     override init(frame: CGRect) {
