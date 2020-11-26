@@ -21,7 +21,6 @@ class ScrollViewWithContainerView: UIScrollView {
     
     var containerView = UIView()
     
-    
     private func setup() {
         addSubview(containerView.autolayout())
         let constraints = [containerView.heightAnchor.constraint(equalTo: self.heightAnchor),
@@ -31,6 +30,5 @@ class ScrollViewWithContainerView: UIScrollView {
         containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor)]
         NSLayoutConstraint.activate(constraints)
     }
-    
     
 }

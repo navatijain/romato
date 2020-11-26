@@ -44,6 +44,8 @@ class HomeViewController: UIViewController {
         tableView.register(FilterCell.self, forCellReuseIdentifier: "FilterCell")
         tableView.register(CollectionsHeaderCell.self, forCellReuseIdentifier: "CollectionHeader")
         tableView.register(RestaurantCardCell.self, forCellReuseIdentifier: "RestaurantCard")
+        tableView.register(CollectionScrollView.self, forCellReuseIdentifier: "CollectionScrollView")
+
         tableView.tableHeaderView = filterViewScrollView
         tableView.tableHeaderView?.backgroundColor = .yellow
         return tableView
@@ -164,16 +166,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
         case .collectionsScroll:
             print("collections scroll")
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionScrollView") as? CollectionScrollView else {
+                return UITableViewCell()
+            }
+            return cell
             
         case .restaurantCard:
             print("restaurant card")
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCard") as? RestaurantCardCell else {
                 return UITableViewCell()
-                
             }
-            
             return cell
-            
         }
         return UITableViewCell()
     }

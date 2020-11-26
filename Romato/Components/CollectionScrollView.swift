@@ -1,33 +1,33 @@
 //
-//  FoodItemCell.swift
+//  CollectionScrollView.swift
 //  Romato
 //
-//  Created by Navati Jain on 2020-09-29.
+//  Created by Navati Jain on 2020-10-19.
 //
 
 import UIKit
 
-class RestaurantCardCell: UITableViewCell {
+class CollectionScrollView: UITableViewCell {
     
-    private var card = RestaurantCardView()
+    var collectionView = CollectionView()
     
-    private func setupView() {
-        contentView.addSubviewsWithAutoLayout([card])
-        let constraints = card.anchor(to: contentView)
+    func setupView() {
+        contentView.addSubviewsWithAutoLayout(collectionView)
+        
+        let constraints = collectionView.anchor(to: contentView)
         NSLayoutConstraint.activate(constraints)
     }
-    
     //MARK: Initalizers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
         backgroundColor = .clear
-        selectionStyle = .none
         isAccessibilityElement = false
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
 }
