@@ -16,6 +16,8 @@
 		930931C224F09DD800E1B2E9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930931C124F09DD800E1B2E9 /* HomeViewController.swift */; };
 		930931C424F09E0C00E1B2E9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930931C324F09E0C00E1B2E9 /* HomeViewModel.swift */; };
 		931FE92425703FEE0046624F /* RestaurantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931FE92325703FEE0046624F /* RestaurantCardView.swift */; };
+		931FE92B2572F1720046624F /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931FE92A2572F1720046624F /* LocationDetails.swift */; };
+		931FE9402572F8430046624F /* LocationDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931FE93F2572F8430046624F /* LocationDetailsService.swift */; };
 		933E2C102517B35200FC9E63 /* FilterViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E2C0F2517B35200FC9E63 /* FilterViewComponent.swift */; };
 		933E2C122517B4B000FC9E63 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E2C112517B4B000FC9E63 /* Colors.swift */; };
 		933E2C142517B52700FC9E63 /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E2C132517B52700FC9E63 /* UIColor+Utility.swift */; };
@@ -89,6 +91,8 @@
 		930931C124F09DD800E1B2E9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		930931C324F09E0C00E1B2E9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		931FE92325703FEE0046624F /* RestaurantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardView.swift; sourceTree = "<group>"; };
+		931FE92A2572F1720046624F /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
+		931FE93F2572F8430046624F /* LocationDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsService.swift; sourceTree = "<group>"; };
 		933E2C0F2517B35200FC9E63 /* FilterViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewComponent.swift; sourceTree = "<group>"; };
 		933E2C112517B4B000FC9E63 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		933E2C132517B52700FC9E63 /* UIColor+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utility.swift"; sourceTree = "<group>"; };
@@ -177,10 +181,13 @@
 		9309318E24F0998300E1B2E9 /* Romato */ = {
 			isa = PBXGroup;
 			children = (
+				931FE92F2572F52A0046624F /* Services */,
+				931FE9282571C3E20046624F /* Model */,
 				936D1830253BB87D00889CE0 /* Utility */,
 				9380088C2516CBEF0048D2A8 /* Constants */,
 				934853032505839900EDD2AA /* Components */,
 				934853002505811C00EDD2AA /* Extensions */,
+				931FE92925722C2A0046624F /* New Group */,
 				930931C024F09D8800E1B2E9 /* ViewControllers */,
 				930931BF24F09D8200E1B2E9 /* models */,
 				9309318F24F0998300E1B2E9 /* AppDelegate.swift */,
@@ -224,6 +231,30 @@
 				930931C124F09DD800E1B2E9 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		931FE9282571C3E20046624F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				931FE92A2572F1720046624F /* LocationDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		931FE92925722C2A0046624F /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			path = "ViewControllers/New Group";
+			sourceTree = "<group>";
+		};
+		931FE92F2572F52A0046624F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				931FE93F2572F8430046624F /* LocationDetailsService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		934853002505811C00EDD2AA /* Extensions */ = {
@@ -445,6 +476,7 @@
 				936D1857253E80B500889CE0 /* CollectionScrollView.swift in Sources */,
 				936D1850253BC09E00889CE0 /* UIContentSizeCategory+Extensions.swift in Sources */,
 				933E2C222522E99900FC9E63 /* RestaurantCardCell.swift in Sources */,
+				931FE9402572F8430046624F /* LocationDetailsService.swift in Sources */,
 				936D1855253E7DF900889CE0 /* CollectionViewCell.swift in Sources */,
 				933E2C122517B4B000FC9E63 /* Colors.swift in Sources */,
 				933E2C102517B35200FC9E63 /* FilterViewComponent.swift in Sources */,
@@ -457,6 +489,7 @@
 				9309319024F0998300E1B2E9 /* AppDelegate.swift in Sources */,
 				9309319224F0998300E1B2E9 /* SceneDelegate.swift in Sources */,
 				930931C424F09E0C00E1B2E9 /* HomeViewModel.swift in Sources */,
+				931FE92B2572F1720046624F /* LocationDetails.swift in Sources */,
 				934853022505815700EDD2AA /* UIView+Extension.swift in Sources */,
 				936D1852253E7DA200889CE0 /* CollectionView.swift in Sources */,
 				930931C224F09DD800E1B2E9 /* HomeViewController.swift in Sources */,

@@ -33,7 +33,15 @@ class HomeViewModel {
         state = .loading
         
         // actual network call will be starting from here/
-        
+        LocationDetailsService.getLocationDetails { (result) in
+            switch(result) {
+            case .success(let result):
+            print(result)
+            
+            case .failure(let error):
+            print(error)
+            }
+        }
         //state = .loaded
         //load tableview
         state = .loaded
