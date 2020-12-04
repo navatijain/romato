@@ -189,7 +189,7 @@
 				934853002505811C00EDD2AA /* Extensions */,
 				931FE92925722C2A0046624F /* New Group */,
 				930931C024F09D8800E1B2E9 /* ViewControllers */,
-				930931BF24F09D8200E1B2E9 /* models */,
+				930931BF24F09D8200E1B2E9 /* ViewModels */,
 				9309318F24F0998300E1B2E9 /* AppDelegate.swift */,
 				9309319124F0998300E1B2E9 /* SceneDelegate.swift */,
 				9309319824F0998500E1B2E9 /* Assets.xcassets */,
@@ -217,12 +217,12 @@
 			path = RomatoUITests;
 			sourceTree = "<group>";
 		};
-		930931BF24F09D8200E1B2E9 /* models */ = {
+		930931BF24F09D8200E1B2E9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				930931C324F09E0C00E1B2E9 /* HomeViewModel.swift */,
 			);
-			path = models;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		930931C024F09D8800E1B2E9 /* ViewControllers */ = {

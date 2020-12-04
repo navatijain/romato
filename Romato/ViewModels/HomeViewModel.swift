@@ -8,7 +8,7 @@
 import Foundation
 
 enum CellType{
-    case filterRow, blankSpace, collectionsHeader, collectionsScroll, restaurantCard
+    case filterRow, blankSpace, collectionsHeader, collectionsScroll, restaurantCard(RestaurantModel)
 }
 
 class HomeViewModel {
@@ -17,7 +17,14 @@ class HomeViewModel {
         case notLoaded, loading, loaded, error
     }
     
-    var dataSource : [CellType] = [.collectionsHeader, .blankSpace,.collectionsScroll, .blankSpace, .restaurantCard,.restaurantCard,.restaurantCard,.restaurantCard]
+    var dataSource : [CellType] = [.collectionsHeader, .blankSpace,.collectionsScroll, .blankSpace,]
+    
+    private func addRestaurantCard(model: LocationDetails) {
+        if let restaurantList = model.bestRatedRestaurant {
+            for restaurant in restaurantList {
+                dataSource.append(CellType.restaurantCard(restaurant)) }
+        }
+    }
     
     private var state: State = .notLoaded {
         didSet {
@@ -34,17 +41,20 @@ class HomeViewModel {
         
         // actual network call will be starting from here/
         LocationDetailsService.getLocationDetails { (result) in
-            switch(result) {
-            case .success(let result):
-            print(result)
-            
-            case .failure(let error):
-            print(error)
+            DispatchQueue.main.async {
+                switch(result) {
+                case .success(let result):
+                    print(result)
+                    self.addRestaurantCard(model: result)
+                    self.state = .loaded
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
         //state = .loaded
         //load tableview
-        state = .loaded
+        
         
     }
 }

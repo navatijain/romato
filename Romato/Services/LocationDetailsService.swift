@@ -29,9 +29,11 @@ class LocationDetailsService {
         request.setValue("04f9ace5b05be85764188952a5672d07", forHTTPHeaderField: "user-key")
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let httpResponse = response as? HTTPURLResponse  {
-              //  String(data)
+           
                 if httpResponse.statusCode == 200 {
-                if let data = data, let locationDetails = try? JSONDecoder().decode(LocationDetails.self, from: data)  {
+                    let jsonDecoder = JSONDecoder()
+                    jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                    if let data = data, let locationDetails = try? jsonDecoder.decode(LocationDetails.self, from: data)  {
                     print(locationDetails)
                     handler(.success(locationDetails))
                 } else {

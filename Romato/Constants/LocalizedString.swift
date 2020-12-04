@@ -24,4 +24,16 @@ struct LocalizedString {
     
     static let collections = "Collections"
     static let seeAll = "See All"
+    
+    struct RestaurantDetails {
+        static let pricingForTwo = "$ for two"
+    }
+    
+    static let notAvailableLong = "Not Available"
+    static let notAvailableShort = "NA"
+    
+    struct Files {
+        static let bookMarkImage = "bookmark"
+    }
+    
 }

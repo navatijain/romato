@@ -8,15 +8,13 @@
 import UIKit
 
 class FilterButton: FilterViewComponentBaseView {
-    
     lazy var label: GreyLabel = {
         let label = GreyLabel()
         label.text = LocalizedString.FilterComponent.filters
         return label
-        
     }()
     
-    lazy  var image: UIImageView = {
+    lazy var image: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "filter"))
         imageView.contentMode = .scaleAspectFit
         //  imageView.setContentCompressionResistancePriority(.required, for: .horizontal)
@@ -39,11 +37,9 @@ class FilterButton: FilterViewComponentBaseView {
                 label.topAnchor.constraint(equalTo: image.topAnchor),
                 label.bottomAnchor.constraint(equalTo: image.bottomAnchor),
             ]
-        
         NSLayoutConstraint.activate(constraints)
     }
-    
-    
+
     //MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,5 +49,4 @@ class FilterButton: FilterViewComponentBaseView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

@@ -8,6 +8,11 @@
 import UIKit
 
 class RestaurantCardCell: UITableViewCell {
+    var model: RestaurantModel? {
+        didSet{
+            card.model = model
+        }
+    }
     
     private var card = RestaurantCardView()
     

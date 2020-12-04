@@ -9,28 +9,28 @@ import Foundation
 
 struct LocationDetails: Codable {
     let popularity: String?
-    let nightlife_index: String?
-    let nearby_res: [String]?
+    let nightlifeIndex: String?
+    let nearbyRes: [String]?
     let location: CityLocation?
-    let num_restaurant: Int?
-    let best_rated_restaurant: [RestaurantDictionary]?
+    let numRestaurant: Int?
+    let bestRatedRestaurant: [RestaurantModel]?
     
 }
 
-struct RestaurantDictionary: Codable {
-    let restaurant: Restaurant?
-}
+//struct RestaurantDictionary: Codable {
+//    let restaurant: Restaurant?
+//}
 
 struct CityLocation: Codable{
-    let entity_type: String?
-    let entity_id: Int?
+    let entityType: String?
+    let entityId: Int?
     let title: String?
     let latitude: Double?
     let longitude: Double?
-    let city_id: Int?
-    let city_name: String?
-    let country_id: Int?
-    let country_name: String?
+    let cityId: Int?
+    let cityName: String?
+    let countryId: Int?
+    let countryName: String?
 }
 
 struct Restaurant: Codable {
@@ -39,7 +39,9 @@ struct Restaurant: Codable {
     let id: String?
     let name: String?
     let url: String?
-    //let location: RestaurantLocation
+    let location: RestaurantLocation?
+    let cuisines: String?
+    let averageCostForTwo: Int?
 }
 
 struct R: Codable {
@@ -55,10 +57,10 @@ struct RestaurantLocation: Codable {
     let address: String?
     let locality: String?
     let city: String?
-    let city_id: Int?
+    let cityId: Int?
     let latitude: String?
     let longitude: String?
     let zipcode: String?
-    let country_id: Int?
-    let locality_verbose: String?
+    let countryId: Int?
+    let localityVerbose: String?
 }

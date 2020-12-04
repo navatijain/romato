@@ -171,11 +171,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
             
-        case .restaurantCard:
+        case .restaurantCard(let model):
             print("restaurant card")
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCard") as? RestaurantCardCell else {
                 return UITableViewCell()
             }
+            cell.model = model
             return cell
         }
         return UITableViewCell()

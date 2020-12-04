@@ -4,7 +4,7 @@
 //
 //  Created by Navati Jain on 2020-09-29.
 //
-
+//TO be deleted
 import UIKit
 
 class RestaurantSummaryCard: UIView {
