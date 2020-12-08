@@ -22,7 +22,7 @@ struct LocalizedString {
         static let openNow = "Open Now"
     }
     
-    static let collections = "Collections"
+    static let collections = "Curated Collections"
     static let seeAll = "See All"
     
     struct RestaurantDetails {

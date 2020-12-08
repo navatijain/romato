@@ -14,7 +14,6 @@ struct LocationDetails: Codable {
     let location: CityLocation?
     let numRestaurant: Int?
     let bestRatedRestaurant: [RestaurantModel]?
-    
 }
 
 //struct RestaurantDictionary: Codable {
@@ -42,6 +41,7 @@ struct Restaurant: Codable {
     let location: RestaurantLocation?
     let cuisines: String?
     let averageCostForTwo: Int?
+    let thumb: String?
 }
 
 struct R: Codable {

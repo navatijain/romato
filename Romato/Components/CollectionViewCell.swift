@@ -25,8 +25,6 @@ class CollectionViewCell: UICollectionViewCell {
         setupConstraints()
     }
     
-    
-  
     lazy var collectionImageView: CollectionImageView = {
         let collectionImageView = CollectionImageView()
         return collectionImageView

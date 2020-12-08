@@ -69,7 +69,6 @@ extension CollectionView {
     
 }
 
-
 // MARK: - UICollectionViewDelegate & Data Source
 extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     

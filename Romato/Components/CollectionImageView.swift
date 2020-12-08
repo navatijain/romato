@@ -8,7 +8,6 @@
 import UIKit
 
 class CollectionImageView: UIView {
-
     lazy var imageView: UIImageView = {
        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill

@@ -15,20 +15,24 @@ class RestaurantCardView: UIView {
                 restaurantTitle.text = restaurant.name
                 cuisines.text = restaurant.cuisines
                 if let pricing = restaurant.averageCostForTwo {
-                    pricingLabel.text =   "\(pricing)\(LocalizedString.RestaurantDetails.pricingForTwo)"
+                    pricingLabel.text = "\(pricing)\(LocalizedString.RestaurantDetails.pricingForTwo)"
                 } else {
                     pricingLabel.text = LocalizedString.notAvailableShort
                 }
                 addressLabel.text = restaurant.location?.localityVerbose ?? LocalizedString.notAvailableLong
+               // print("IMAGE:\(restaurant.thumb)")
+                if let restaurantImageLink = restaurant.thumb, let URL = URL(string: restaurantImageLink) {
+                    imageView.loadURL(url: URL)
+                }
+                layoutIfNeeded() //TO DO: why
             }
-            
         }
     }
     
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "food")
+        imageView.contentMode = .scaleAspectFit
+       // imageView.image = UIImage(named: "food")
         return imageView
     }()
     
@@ -70,9 +74,13 @@ class RestaurantCardView: UIView {
         labelBackground.addSubviewsWithAutoLayout(distancelabel)
         //self
         var constraints = imageView.anchor(to: imageCard)
-        
+      //  var constraints: [NSLayoutConstraint] = []
         constraints.append(contentsOf: [
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 3/2),
+//            imageView.topAnchor.constraint(equalTo: imageCard.topAnchor),
+//            imageView.bottomAnchor.constraint(equalTo: imageCard.bottomAnchor),
+//            imageView.leadingAnchor.constraint(equalTo: imageCard.leadingAnchor),
+//            imageView.trailingAnchor.constraint(equalTo: imageCard.trailingAnchor),
             circleBackground.topAnchor.constraint(equalTo: imageCard.topAnchor, constant: 12),
             circleBackground.trailingAnchor.constraint(equalTo: imageCard.trailingAnchor, constant: -12),
             circleBackground.widthAnchor.constraint(equalToConstant: 25),
@@ -165,7 +173,6 @@ class RestaurantCardView: UIView {
     
     private func setupRestaurantSummary(){
         restaurantSummaryCard.addSubviewsWithAutoLayout([restaurantSummaryStackView])
-        
         let constraints = [
             restaurantSummaryStackView.topAnchor.constraint(equalTo: restaurantSummaryCard.topAnchor, constant: 10),
             restaurantSummaryStackView.leadingAnchor.constraint(equalTo: restaurantSummaryCard.leadingAnchor, constant: 20),
@@ -175,9 +182,7 @@ class RestaurantCardView: UIView {
         NSLayoutConstraint.activate(constraints)
     }
     
-    
     //MARK: Constraints
-    
     func setupView() {
         setupImageCard()
         setupRestaurantSummary()
@@ -185,13 +190,13 @@ class RestaurantCardView: UIView {
         addSubviewsWithAutoLayout([imageCard,restaurantSummaryCard])
         
         let constraints = [
-            imageCard.topAnchor.constraint(equalTo: self.topAnchor),
-            imageCard.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            imageCard.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            imageCard.topAnchor.constraint(equalTo: topAnchor),
+            imageCard.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageCard.trailingAnchor.constraint(equalTo: trailingAnchor),
             imageCard.bottomAnchor.constraint(equalTo: restaurantSummaryCard.topAnchor),
             restaurantSummaryCard.leadingAnchor.constraint(equalTo: imageCard.leadingAnchor),
             restaurantSummaryCard.trailingAnchor.constraint(equalTo: imageCard.trailingAnchor),
-            restaurantSummaryCard.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            restaurantSummaryCard.bottomAnchor.constraint(equalTo: bottomAnchor),
         ]
         NSLayoutConstraint.activate(constraints)
     }
@@ -213,4 +218,18 @@ class RestaurantCardView: UIView {
     }
     
     
+}
+
+extension UIImageView {
+    func loadURL(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }

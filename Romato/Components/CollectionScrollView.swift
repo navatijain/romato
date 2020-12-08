@@ -13,7 +13,6 @@ class CollectionScrollView: UITableViewCell {
     
     func setupView() {
         contentView.addSubviewsWithAutoLayout(collectionView)
-        
         let constraints = collectionView.anchor(to: contentView)
         NSLayoutConstraint.activate(constraints)
     }
@@ -28,6 +27,4 @@ class CollectionScrollView: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }

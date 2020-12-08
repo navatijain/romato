@@ -33,9 +33,9 @@ class HomeViewController: UIViewController {
      }
      */
     
-    var filterViewScrollView = FilterContainerScrollView()
+    private let filterViewScrollView = FilterContainerScrollView()
     
-    lazy var tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
@@ -44,11 +44,21 @@ class HomeViewController: UIViewController {
         tableView.register(FilterCell.self, forCellReuseIdentifier: "FilterCell")
         tableView.register(CollectionsHeaderCell.self, forCellReuseIdentifier: "CollectionHeader")
         tableView.register(RestaurantCardCell.self, forCellReuseIdentifier: "RestaurantCard")
-        tableView.register(CollectionScrollView.self, forCellReuseIdentifier: "CollectionScrollView")
-
+//        tableView.register(CollectionScrollView.self, forCellReuseIdentifier: "CollectionScrollView")
+        tableView.register(CuratedCollectionViewInCellTableViewCell.self, forCellReuseIdentifier: "CuratedCollectionViewInCellTableViewCell")
+        
         tableView.tableHeaderView = filterViewScrollView
         tableView.tableHeaderView?.backgroundColor = .yellow
         return tableView
+    }()
+    
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.delegate = self
+        collectionView.dataSource = self
+
+        collectionView.register(CollectionCell.self, forCellWithReuseIdentifier: "CollectionCell")
+        return collectionView
     }()
     
     func setTableHeaderView() {
@@ -78,7 +88,7 @@ class HomeViewController: UIViewController {
                 print("loaded")
                 // self.view.addSubview(self.tableView.autolayout()) // add autolayour
                 //   self.view.addSubviewsWithAutoLayout([self.tableView, self.addressView, self.filterViewScrollView])
-                self.view.addSubviewsWithAutoLayout([self.tableView, self.addressView])
+                self.view.addSubviewsWithAutoLayout([self.tableView, self.addressView, self.collectionView])
                 self.setupConstraints()
                 
             case .error:
@@ -97,9 +107,17 @@ class HomeViewController: UIViewController {
             addressView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             addressView.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -10),
             
+         //   addressView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: -10),
+            
+            
             filterViewScrollView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor),
             filterViewScrollView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor),
             filterViewScrollView.topAnchor.constraint(equalTo: self.tableView.topAnchor),
+            
+//            collectionView.leadingAnchor.constraint(equalTo: addressView.leadingAnchor),
+//            collectionView.trailingAnchor.constraint(equalTo: addressView.trailingAnchor),
+//            collectionView.bottomAnchor.constraint(equalTo: tableView.topAnchor),
+            
             //   addressView.bottomAnchor.constraint(equalTo: filterViewScrollView.topAnchor, constant: -10),
             
             //            filterViewScrollView.leadingAnchor.constraint(equalTo: addressView.leadingAnchor),
@@ -166,7 +184,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
         case .collectionsScroll:
             print("collections scroll")
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionScrollView") as? CollectionScrollView else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CuratedCollectionViewInCellTableViewCell") as? CuratedCollectionViewInCellTableViewCell else {
                 return UITableViewCell()
             }
             return cell
@@ -182,6 +200,49 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
 }
+
+extension HomeViewController:  UICollectionViewDataSource,  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as? CollectionCell {
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //TODO: Clarify
+        return CGSize(width: collectionView.bounds.size.width, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+    }
+}
+
 
 /* Not functioning
  extension HomeViewController: UISearchResultsUpdating {
