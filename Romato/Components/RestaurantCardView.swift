@@ -32,7 +32,6 @@ class RestaurantCardView: UIView {
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-       // imageView.image = UIImage(named: "food")
         return imageView
     }()
     
@@ -216,8 +215,6 @@ class RestaurantCardView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
 
 extension UIImageView {

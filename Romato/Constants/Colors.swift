@@ -11,6 +11,8 @@ public struct Colors {
     public struct Brand {
         static let black = UIColor(hexString: "#1e1f26")
         static let gray200 = UIColor(hexString: "#949494")
+        static let gray400 = UIColor(hexString: "#696969")
+        static let gray300 = UIColor(hexString: "#DEDDDE")
         static let white = UIColor(hexString: "#ffffff")
         static let orange = UIColor(hexString: "#f45905")
         static let gray100 = UIColor(hexString: "#d1d5de")

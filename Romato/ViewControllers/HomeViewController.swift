@@ -46,9 +46,7 @@ class HomeViewController: UIViewController {
         tableView.register(RestaurantCardCell.self, forCellReuseIdentifier: "RestaurantCard")
 //        tableView.register(CollectionScrollView.self, forCellReuseIdentifier: "CollectionScrollView")
         tableView.register(CuratedCollectionViewInCellTableViewCell.self, forCellReuseIdentifier: "CuratedCollectionViewInCellTableViewCell")
-        
         tableView.tableHeaderView = filterViewScrollView
-        tableView.tableHeaderView?.backgroundColor = .yellow
         return tableView
     }()
     
@@ -56,7 +54,6 @@ class HomeViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
-
         collectionView.register(CollectionCell.self, forCellWithReuseIdentifier: "CollectionCell")
         return collectionView
     }()
@@ -105,7 +102,7 @@ class HomeViewController: UIViewController {
             addressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             addressView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             addressView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            addressView.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -10),
+            addressView.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: 10),
             
          //   addressView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: -10),
             
@@ -113,6 +110,8 @@ class HomeViewController: UIViewController {
             filterViewScrollView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor),
             filterViewScrollView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor),
             filterViewScrollView.topAnchor.constraint(equalTo: self.tableView.topAnchor),
+        
+          //  filterViewScrollView.heightAnchor.constraint(equalTo: tableView.tableHeaderView?.heightAnchor),
             
 //            collectionView.leadingAnchor.constraint(equalTo: addressView.leadingAnchor),
 //            collectionView.trailingAnchor.constraint(equalTo: addressView.trailingAnchor),

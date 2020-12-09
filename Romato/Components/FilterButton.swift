@@ -25,7 +25,6 @@ class FilterButton: FilterViewComponentBaseView {
         addSubviewsWithAutoLayout([image,label])
         let spacing: CGFloat = 5
         let constraints =
-            //label.anchor(to: self)
             [
                 image.widthAnchor.constraint(equalToConstant: 24),
                 image.heightAnchor.constraint(equalToConstant: 24),

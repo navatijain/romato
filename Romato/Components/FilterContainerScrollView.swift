@@ -9,10 +9,10 @@ import UIKit
 
 class FilterContainerScrollView: UIView {
     
-    var scrollView = ScrollViewWithContainerView()
+    private var scrollView = ScrollViewWithContainerView()
     
     //move the initilaization of this variable outside later
-    var filterTextList: [String] = [
+    private var filterTextList: [String] = [
         LocalizedString.FilterComponent.nearestToMe,
         LocalizedString.FilterComponent.ratings,
         LocalizedString.FilterComponent.bookATable,
@@ -20,9 +20,9 @@ class FilterContainerScrollView: UIView {
         LocalizedString.FilterComponent.openNow,
     ]
     
-    lazy var filterComponentsList: [FilterViewComponent] = {
+    private lazy var filterComponentsList: [FilterViewComponent] = {
         var filterComponentsList =  [FilterViewComponent]()
-        
+
         filterTextList.forEach {
             let filterComponent = FilterViewComponent()
             filterComponent.labelText = $0
@@ -31,7 +31,7 @@ class FilterContainerScrollView: UIView {
         return filterComponentsList
     }()
     
-    lazy var stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: filterComponentsList)
         stackView.spacing = 10
         stackView.axis = .horizontal
@@ -40,22 +40,21 @@ class FilterContainerScrollView: UIView {
         return stackView
     }()
     
-    lazy var filterButton = FilterButton()
+    private lazy var filterButton = FilterButton()
     
-    func setup() {
+    private func setup() {
         setBorder()
     }
     
-    func setBorder() {
+    private func setBorder() {
         layer.borderWidth = 1
         layer.borderColor =  Colors.Brand.gray100.cgColor
     }
     
-    func setConstraints() {
+    private func setConstraints() {
         scrollView.containerView.addSubviewsWithAutoLayout(stackView)
         addSubviewsWithAutoLayout([filterButton,scrollView])
-        var constraints = stackView.anchor(to: scrollView.containerView, with: UIEdgeInsets(top: -1, left: 5, bottom: -1, right: -5))
-       // constraints.append(contentsOf: scrollView.anchor(to: self))
+        var constraints = stackView.anchor(to: scrollView.containerView, with: UIEdgeInsets(top: 1, left: 5, bottom: -1, right: -5))
         constraints.append(contentsOf: [
             filterButton.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             filterButton.topAnchor.constraint(equalTo: self.topAnchor),
@@ -67,7 +66,6 @@ class FilterContainerScrollView: UIView {
         ])
         NSLayoutConstraint.activate(constraints)
     }
-    
     
     //MARK: Initializers
     override init(frame: CGRect) {

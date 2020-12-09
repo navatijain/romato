@@ -10,18 +10,10 @@ import UIKit
 
 class ScrollViewWithContainerView: UIScrollView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     var containerView = UIView()
     
     private func setup() {
+        showsHorizontalScrollIndicator = false
         addSubview(containerView.autolayout())
         let constraints = [containerView.heightAnchor.constraint(equalTo: self.heightAnchor),
         containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -29,6 +21,15 @@ class ScrollViewWithContainerView: UIScrollView {
         containerView.topAnchor.constraint(equalTo: self.topAnchor),
         containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor)]
         NSLayoutConstraint.activate(constraints)
+    }
+    
+    //MARK: Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }
