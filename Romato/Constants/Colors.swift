@@ -12,10 +12,13 @@ public struct Colors {
         static let black = UIColor(hexString: "#1e1f26")
         static let gray200 = UIColor(hexString: "#949494")
         static let gray400 = UIColor(hexString: "#696969")
+        static let gray500 = UIColor(hexString: "#838383")
         static let gray300 = UIColor(hexString: "#DEDDDE")
         static let white = UIColor(hexString: "#ffffff")
         static let orange = UIColor(hexString: "#f45905")
         static let gray100 = UIColor(hexString: "#d1d5de")
+        static let gray50 = UIColor(hexString: "D3D3D3")
+        
     }
     
     public struct Border {

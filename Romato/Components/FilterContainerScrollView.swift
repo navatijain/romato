@@ -20,11 +20,11 @@ class FilterContainerScrollView: UIView {
         LocalizedString.FilterComponent.openNow,
     ]
     
-    private lazy var filterComponentsList: [FilterViewComponent] = {
-        var filterComponentsList =  [FilterViewComponent]()
+    private lazy var filterComponentsList: [FilterView] = {
+        var filterComponentsList =  [FilterView]()
 
         filterTextList.forEach {
-            let filterComponent = FilterViewComponent()
+            let filterComponent = FilterView()
             filterComponent.labelText = $0
             filterComponentsList.append(filterComponent)
         }
@@ -41,15 +41,6 @@ class FilterContainerScrollView: UIView {
     }()
     
     private lazy var filterButton = FilterButton()
-    
-    private func setup() {
-        setBorder()
-    }
-    
-    private func setBorder() {
-        layer.borderWidth = 1
-        layer.borderColor =  Colors.Brand.gray100.cgColor
-    }
     
     private func setConstraints() {
         scrollView.containerView.addSubviewsWithAutoLayout(stackView)
@@ -70,12 +61,11 @@ class FilterContainerScrollView: UIView {
     //MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+       // setup()
         setConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

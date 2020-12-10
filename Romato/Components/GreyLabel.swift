@@ -11,7 +11,7 @@ class GreyLabel: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        textColor = Colors.Brand.gray400
+        textColor = Colors.Brand.gray500
         textAlignment = .center
     }
     

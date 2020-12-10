@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FilterViewComponent: FilterViewComponentBaseView {
+class FilterView: ShadowView {
     
     var labelText: String = "" {
         didSet {
@@ -16,11 +16,11 @@ class FilterViewComponent: FilterViewComponentBaseView {
     }
     
     private var label = GreyLabel()
+    
     private func setup() {
-        setBorder()
-        addSubviewsWithAutoLayout([label])
+        containerView.addSubviewsWithAutoLayout(label)
         let spacing: CGFloat = 5
-        let constraints = label.anchor(to: self,with: UIEdgeInsets(top: spacing , left: spacing, bottom: -spacing, right: -spacing))
+        let constraints = label.anchor(to: containerView, with: UIEdgeInsets(top: spacing , left: spacing, bottom: -spacing, right: -spacing))
         NSLayoutConstraint.activate(constraints)
     }
     

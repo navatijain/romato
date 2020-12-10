@@ -100,8 +100,8 @@ class HomeViewController: UIViewController {
         
         let constraints = [
             addressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            addressView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            addressView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            addressView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            addressView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             addressView.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: 10),
             
          //   addressView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: -10),
