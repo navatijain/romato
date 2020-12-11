@@ -59,6 +59,7 @@
 		936D1859253FF23500889CE0 /* CollectionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936D1858253FF23500889CE0 /* CollectionImageView.swift */; };
 		9380088A2516CA100048D2A8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938008892516CA100048D2A8 /* SearchBar.swift */; };
 		9380088E2516CC040048D2A8 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9380088D2516CC040048D2A8 /* LocalizedString.swift */; };
+		93C159E925830B6A0083A116 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C159E825830B6A0083A116 /* TabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		936D1858253FF23500889CE0 /* CollectionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionImageView.swift; sourceTree = "<group>"; };
 		938008892516CA100048D2A8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		9380088D2516CC040048D2A8 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		93C159E825830B6A0083A116 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 		930931C024F09D8800E1B2E9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				93C159E825830B6A0083A116 /* TabViewController.swift */,
 				930931C124F09DD800E1B2E9 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -509,6 +512,7 @@
 				933E2C282523C57600FC9E63 /* RestaurantSummaryCard.swift in Sources */,
 				93485305250583CF00EDD2AA /* AddressView.swift in Sources */,
 				933E2C1A252282D900FC9E63 /* FilterButton.swift in Sources */,
+				93C159E925830B6A0083A116 /* TabViewController.swift in Sources */,
 				931FE92425703FEE0046624F /* RestaurantCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
