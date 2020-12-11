@@ -27,27 +27,8 @@ class CollectionViewCell: UICollectionViewCell {
     
     lazy var collectionImageView: CollectionImageView = {
         let collectionImageView = CollectionImageView()
-        return collectionImageView
-        
-        
+        return collectionImageView  
     }()
-//    // MARK: - Properties
-//    lazy var roundedBackgroundView: UIView = {
-//        let view = UIView()
-//        view.layer.cornerRadius = 10
-//        view.layer.borderColor = UIColor.systemGray.cgColor
-//        view.layer.borderWidth = 1
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
-//
-//    lazy var titleLabel: UILabel = {
-//        let label = UILabel()
-//        label.font = UIFont(name: "HelveticaNeue", size: 20)
-//        label.textColor = .systemBlue
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        return label
-//    }()
     
 }
 

@@ -8,33 +8,12 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
+    //MARK: Model
     let viewModel: HomeViewModel
     
-    required init(model: HomeViewModel) {
-        viewModel = model
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    var addressView =  AddressView()
-    
-    /* not functioning
-     var searchBar: UISearchController {
-     let search = UISearchController(searchResultsController: nil)
-     search.searchResultsUpdater = self
-     search.obscuresBackgroundDuringPresentation = false
-     search.searchBar.placeholder = "Type something here to search"
-     navigationItem.searchController = search
-     return search
-     }
-     */
-    
+    //MARK: UI Elements
+    private var addressView =  AddressView()
     private let filterViewScrollView = FilterContainerScrollView()
-    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -44,8 +23,9 @@ class HomeViewController: UIViewController {
         tableView.register(FilterCell.self, forCellReuseIdentifier: "FilterCell")
         tableView.register(CollectionsHeaderCell.self, forCellReuseIdentifier: "CollectionHeader")
         tableView.register(RestaurantCardCell.self, forCellReuseIdentifier: "RestaurantCard")
-//        tableView.register(CollectionScrollView.self, forCellReuseIdentifier: "CollectionScrollView")
-        tableView.register(CuratedCollectionViewInCellTableViewCell.self, forCellReuseIdentifier: "CuratedCollectionViewInCellTableViewCell")
+        //        tableView.register(CollectionScrollView.self, forCellReuseIdentifier: "CollectionScrollView")
+        tableView.register(CuratedCollectionViewInCellTableViewCell.self,
+                           forCellReuseIdentifier: "CuratedCollectionViewInCellTableViewCell")
         tableView.tableHeaderView = filterViewScrollView
         return tableView
     }()
@@ -58,11 +38,7 @@ class HomeViewController: UIViewController {
         return collectionView
     }()
     
-    func setTableHeaderView() {
-        //    tableView.tableHeaderView = filterViewScrollView
-        
-        
-    }
+    //MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -76,71 +52,46 @@ class HomeViewController: UIViewController {
             switch state {
             case .notLoaded:
                 print("not loaded")
-            //spinner
-            
+            //TO DO: Spinner
             case .loading:
+                //TO DO: Spinner
                 print("loading")
-                
             case .loaded:
                 print("loaded")
-                // self.view.addSubview(self.tableView.autolayout()) // add autolayour
-                //   self.view.addSubviewsWithAutoLayout([self.tableView, self.addressView, self.filterViewScrollView])
                 self.view.addSubviewsWithAutoLayout([self.tableView, self.addressView, self.collectionView])
                 self.setupConstraints()
-                
             case .error:
                 print("ERROR")
-            //some other error view
+            //TO DO: Error
             }
         }
     }
     
     private func setupConstraints() {
-        //    filterViewScrollView.backgroundColor = .purple
-        
         let constraints = [
             addressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             addressView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             addressView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             addressView.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: 10),
-            
-         //   addressView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: -10),
-            
-            
             filterViewScrollView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor),
             filterViewScrollView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor),
             filterViewScrollView.topAnchor.constraint(equalTo: self.tableView.topAnchor),
-        
-          //  filterViewScrollView.heightAnchor.constraint(equalTo: tableView.tableHeaderView?.heightAnchor),
-            
-//            collectionView.leadingAnchor.constraint(equalTo: addressView.leadingAnchor),
-//            collectionView.trailingAnchor.constraint(equalTo: addressView.trailingAnchor),
-//            collectionView.bottomAnchor.constraint(equalTo: tableView.topAnchor),
-            
-            //   addressView.bottomAnchor.constraint(equalTo: filterViewScrollView.topAnchor, constant: -10),
-            
-            //            filterViewScrollView.leadingAnchor.constraint(equalTo: addressView.leadingAnchor),
-            //            filterViewScrollView.trailingAnchor.constraint(equalTo: addressView.trailingAnchor),
-            //            filterViewScrollView.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -10),
-            //            filterViewScrollView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60),
-            //            tableView.leadingAnchor.constraint(equalTo: filterViewScrollView.leadingAnchor),
-            //            tableView.trailingAnchor.constraint(equalTo: filterViewScrollView.trailingAnchor),
-            //            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            
-          // filterViewScrollView.heightAnchor.constraint(equalToConstant: 60),
-            
             tableView.leadingAnchor.constraint(equalTo: addressView.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: addressView.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            //  filterViewScrollView.widthAnchor.constraint(equalTo: tableView.widthAnchor)
-            // filterViewScrollView.anchor(to: tableView.tableHeaderView)
-            
         ]
-
-        NSLayoutConstraint.activate(constraints)
         
-        //        self.tableView.tableHeaderView?.layoutIfNeeded()
-        //        self.tableView.tableHeaderView = self.tableView.tableHeaderView
+        NSLayoutConstraint.activate(constraints)
+    }
+    
+    //MARK: Init
+    required init(model: HomeViewModel) {
+        viewModel = model
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -150,7 +101,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         super.viewWillLayoutSubviews()
         updateHeaderViewHeight(for: tableView.tableHeaderView)
     }
-
+    
     func updateHeaderViewHeight(for header: UIView?) {
         guard let header = header else { return }
         header.frame.size.height = header.systemLayoutSizeFitting(CGSize(width: view.bounds.width - 32.0, height: 0)).height
