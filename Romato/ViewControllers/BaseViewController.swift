@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class BaseViewController: UIViewController {
     //MARK: Model
     let viewModel: HomeViewModel
     
@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
         tableView.register(FilterCell.self, forCellReuseIdentifier: "FilterCell")
         tableView.register(CollectionsHeaderCell.self, forCellReuseIdentifier: "CollectionHeader")
         tableView.register(RestaurantCardCell.self, forCellReuseIdentifier: "RestaurantCard")
+        //        tableView.register(CollectionScrollView.self, forCellReuseIdentifier: "CollectionScrollView")
         tableView.register(CuratedCollectionViewInCellTableViewCell.self,
                            forCellReuseIdentifier: "CuratedCollectionViewInCellTableViewCell")
         tableView.tableHeaderView = filterViewScrollView
@@ -79,7 +80,6 @@ class HomeViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: addressView.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ]
-        
         NSLayoutConstraint.activate(constraints)
     }
     
@@ -94,7 +94,7 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension BaseViewController: UITableViewDelegate, UITableViewDataSource {
     //https://jayeshkawli.ghost.io/add-header-footer-view-tableview/
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -119,7 +119,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
         case .filterRow:
             print("filter row")
-            
+        //            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell") as? FilterCell else {
+        //                return UITableViewCell()
+        //            }
+        //            return cell
+        
         case .collectionsHeader:
             print("collection header")
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionHeader") as? CollectionsHeaderCell else {
@@ -129,12 +133,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
         case .collectionsScroll:
             print("collections scroll")
-        //TO DO: In progress
-        //            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CuratedCollectionViewInCellTableViewCell") as? CuratedCollectionViewInCellTableViewCell else {
-        //                return UITableViewCell()
-        //            }
-        //            return cell
-        
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CuratedCollectionViewInCellTableViewCell") as? CuratedCollectionViewInCellTableViewCell else {
+                return UITableViewCell()
+            }
+            return cell
+            
         case .restaurantCard(let model):
             print("restaurant card")
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCard") as? RestaurantCardCell else {
@@ -145,31 +148,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = viewModel.dataSource[indexPath.row]
-        switch row {
-        case .blankSpace:
-            return
-        case .filterRow:
-            return
-        case .collectionsHeader:
-            return
-        case .collectionsScroll:
-            return
-        case .restaurantCard(let model):
-            if let restaurantId = model.restaurant?.id {
-                let detailsTabVC = DetailsTabViewController(restaurantId: restaurantId)
-                //TO DO: In progress
-                // navigationController?.pushViewController(detailsTabVC, animated: true)
-            } else {
-                print("restaurant not provided")
-            }
-        }
-    }
 }
 
-extension HomeViewController:  UICollectionViewDataSource,  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension BaseViewController:  UICollectionViewDataSource,  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }

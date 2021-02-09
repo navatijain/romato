@@ -25,7 +25,6 @@ class CollectionsHeaderCell: UITableViewCell {
    
     func setupConsraints() {
         contentView.addSubviewsWithAutoLayout([collectionLabel,seeAllButton])
-        
         let constraints = [
             collectionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             collectionLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),

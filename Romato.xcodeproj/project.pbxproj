@@ -35,6 +35,8 @@
 		933E2C2A2524098D00FC9E63 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E2C292524098D00FC9E63 /* RatingView.swift */; };
 		934853022505815700EDD2AA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934853012505815700EDD2AA /* UIView+Extension.swift */; };
 		93485305250583CF00EDD2AA /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93485304250583CF00EDD2AA /* AddressView.swift */; };
+		9350469025896302007D97F7 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9350468F25896302007D97F7 /* OverviewViewModel.swift */; };
+		9350469B258A8D23007D97F7 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9350469A258A8D23007D97F7 /* Utility.swift */; };
 		936B8819257AE8F200E853E5 /* CollectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B8818257AE8F200E853E5 /* CollectionCard.swift */; };
 		936B8827257C487200E853E5 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B8826257C487200E853E5 /* CollectionCell.swift */; };
 		936D1832253BBDB100889CE0 /* NunitoSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 936D1831253BBDB100889CE0 /* NunitoSans-SemiBoldItalic.ttf */; };
@@ -59,6 +61,10 @@
 		936D1859253FF23500889CE0 /* CollectionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936D1858253FF23500889CE0 /* CollectionImageView.swift */; };
 		9380088A2516CA100048D2A8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938008892516CA100048D2A8 /* SearchBar.swift */; };
 		9380088E2516CC040048D2A8 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9380088D2516CC040048D2A8 /* LocalizedString.swift */; };
+		939208C82584083700E778BB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939208C72584083700E778BB /* BaseViewController.swift */; };
+		939208CD258698C300E778BB /* DetailsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939208CC258698C200E778BB /* DetailsTabViewController.swift */; };
+		939208D42586991100E778BB /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939208D32586991100E778BB /* OverviewViewController.swift */; };
+		939208DD2586992400E778BB /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939208DC2586992400E778BB /* ReviewsViewController.swift */; };
 		93C159E925830B6A0083A116 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C159E825830B6A0083A116 /* TabViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +120,8 @@
 		933E2C292524098D00FC9E63 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		934853012505815700EDD2AA /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		93485304250583CF00EDD2AA /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		9350468F25896302007D97F7 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
+		9350469A258A8D23007D97F7 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		936B8818257AE8F200E853E5 /* CollectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCard.swift; sourceTree = "<group>"; };
 		936B8826257C487200E853E5 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		936D1831253BBDB100889CE0 /* NunitoSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -138,6 +146,10 @@
 		936D1858253FF23500889CE0 /* CollectionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionImageView.swift; sourceTree = "<group>"; };
 		938008892516CA100048D2A8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		9380088D2516CC040048D2A8 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		939208C72584083700E778BB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		939208CC258698C200E778BB /* DetailsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTabViewController.swift; sourceTree = "<group>"; };
+		939208D32586991100E778BB /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		939208DC2586992400E778BB /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
 		93C159E825830B6A0083A116 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				930931C324F09E0C00E1B2E9 /* HomeViewModel.swift */,
+				9350468F25896302007D97F7 /* OverviewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -237,7 +250,11 @@
 			isa = PBXGroup;
 			children = (
 				93C159E825830B6A0083A116 /* TabViewController.swift */,
+				939208C72584083700E778BB /* BaseViewController.swift */,
 				930931C124F09DD800E1B2E9 /* HomeViewController.swift */,
+				939208CC258698C200E778BB /* DetailsTabViewController.swift */,
+				939208D32586991100E778BB /* OverviewViewController.swift */,
+				939208DC2586992400E778BB /* ReviewsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -309,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				936D1838253BBDCC00889CE0 /* Fonts.swift */,
+				9350469A258A8D23007D97F7 /* Utility.swift */,
 				936D183C253BBDCD00889CE0 /* NunitoSans-Black.ttf */,
 				936D183E253BBDCD00889CE0 /* NunitoSans-BlackItalic.ttf */,
 				936D183D253BBDCD00889CE0 /* NunitoSans-Bold.ttf */,
@@ -483,7 +501,10 @@
 				933E2C142517B52700FC9E63 /* UIColor+Utility.swift in Sources */,
 				933E2C202522B4FB00FC9E63 /* FilterCell.swift in Sources */,
 				933E2C1E2522907D00FC9E63 /* ShadowView.swift in Sources */,
+				939208CD258698C300E778BB /* DetailsTabViewController.swift in Sources */,
 				9380088A2516CA100048D2A8 /* SearchBar.swift in Sources */,
+				939208C82584083700E778BB /* BaseViewController.swift in Sources */,
+				939208D42586991100E778BB /* OverviewViewController.swift in Sources */,
 				933E2C1C252283C300FC9E63 /* GreyLabel.swift in Sources */,
 				93204E6C257D6D5000AD29CD /* CuratedCollectionViewInCellTableViewCell.swift in Sources */,
 				936D1857253E80B500889CE0 /* CollectionScrollView.swift in Sources */,
@@ -493,6 +514,7 @@
 				936D1855253E7DF900889CE0 /* CollectionViewCell.swift in Sources */,
 				933E2C122517B4B000FC9E63 /* Colors.swift in Sources */,
 				933E2C102517B35200FC9E63 /* FilterView.swift in Sources */,
+				9350469B258A8D23007D97F7 /* Utility.swift in Sources */,
 				933E2C242522E9C300FC9E63 /* RestaurantCardImageView.swift in Sources */,
 				936D1846253BBDCD00889CE0 /* Fonts.swift in Sources */,
 				936D1859253FF23500889CE0 /* CollectionImageView.swift in Sources */,
@@ -509,7 +531,9 @@
 				936D1852253E7DA200889CE0 /* CollectionView.swift in Sources */,
 				930931C224F09DD800E1B2E9 /* HomeViewController.swift in Sources */,
 				9380088E2516CC040048D2A8 /* LocalizedString.swift in Sources */,
+				9350469025896302007D97F7 /* OverviewViewModel.swift in Sources */,
 				933E2C282523C57600FC9E63 /* RestaurantSummaryCard.swift in Sources */,
+				939208DD2586992400E778BB /* ReviewsViewController.swift in Sources */,
 				93485305250583CF00EDD2AA /* AddressView.swift in Sources */,
 				933E2C1A252282D900FC9E63 /* FilterButton.swift in Sources */,
 				93C159E925830B6A0083A116 /* TabViewController.swift in Sources */,

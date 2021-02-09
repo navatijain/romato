@@ -9,8 +9,6 @@ import UIKit
 
 class FilterButton: ShadowView {
     
-    // private let filterComponent = FilterView()
-    
     lazy var label: GreyLabel = {
         let label = GreyLabel()
         label.text = LocalizedString.FilterComponent.filters

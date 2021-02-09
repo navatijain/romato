@@ -14,10 +14,7 @@ class CuratedCollectionViewInCellTableViewCell: UITableViewCell {
     
     private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
-        
         flowLayout.scrollDirection = .horizontal
-        //flowLayout.itemSize = CGSize(width: contentView.frame.size.width, height: 1000)
-       // flowLayout.estimatedItemSize = CGSize(width: contentView.frame.size.width, height: 250)
         flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = .red
@@ -57,14 +54,6 @@ extension CuratedCollectionViewInCellTableViewCell: UICollectionViewDelegate, UI
         }
     }
     
-   // func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        //TODO: Clarify
-//        return CGSize(width: collectionView.bounds.size.width - 30, height: 200)
-//    }
-    
-    //
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -82,9 +71,4 @@ extension CuratedCollectionViewInCellTableViewCell: UICollectionViewDelegate, UI
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     }
-//    
-//    override func systemLayoutSizeFitting(_ targetSize: CGSize) -> CGSize {
-//        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
-//    }
-    
 }

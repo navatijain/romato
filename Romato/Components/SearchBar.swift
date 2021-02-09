@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//remove
+//TO DO: remove
 class SearchBar: UIView {
 
     var imageView: UIImageView {

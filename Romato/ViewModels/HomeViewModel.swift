@@ -32,14 +32,11 @@ class HomeViewModel {
         }
     }
     
-    // closure
     var stateChangeHandler: ( (State) -> Void )?
     
     func loadMainData() {
-        // some network call
         state = .loading
         
-        // actual network call will be starting from here/
         LocationDetailsService.getLocationDetails { (result) in
             DispatchQueue.main.async {
                 switch(result) {
@@ -52,9 +49,5 @@ class HomeViewModel {
                 }
             }
         }
-        //state = .loaded
-        //load tableview
-        
-        
     }
 }

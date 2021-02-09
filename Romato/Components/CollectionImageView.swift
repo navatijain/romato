@@ -41,7 +41,6 @@ class CollectionImageView: UIView {
     lazy var circleBackground: UIView = {
         let view = UIView()
         view.backgroundColor =  Colors.Brand.white
-       //view.clipsToBounds = true
         view.layer.cornerRadius = 12.5
         return view
      }()

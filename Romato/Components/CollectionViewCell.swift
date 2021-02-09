@@ -36,15 +36,12 @@ class CollectionViewCell: UICollectionViewCell {
 extension CollectionViewCell {
     private func setupConstraints() {
         self.contentView.addSubviewsWithAutoLayout(collectionImageView)
-       // roundedBackgroundView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
             collectionImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 5),
             collectionImageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5),
             collectionImageView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 5),
             collectionImageView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -5),
-//            titleLabel.centerXAnchor.constraint(equalTo: roundedBackgroundView.centerXAnchor),
-//            titleLabel.centerYAnchor.constraint(equalTo: roundedBackgroundView.centerYAnchor)
         ])
         
     }

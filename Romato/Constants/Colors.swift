@@ -18,7 +18,6 @@ public struct Colors {
         static let orange = UIColor(hexString: "#f45905")
         static let gray100 = UIColor(hexString: "#d1d5de")
         static let gray50 = UIColor(hexString: "D3D3D3")
-        
     }
     
     public struct Border {

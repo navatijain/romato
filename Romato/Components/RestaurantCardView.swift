@@ -71,15 +71,9 @@ class RestaurantCardView: UIView {
         imageCard.addSubviewsWithAutoLayout([imageView,labelBackground,circleBackground])
         circleBackground.addSubviewsWithAutoLayout(bookmarkImage)
         labelBackground.addSubviewsWithAutoLayout(distancelabel)
-        //self
         var constraints = imageView.anchor(to: imageCard)
-      //  var constraints: [NSLayoutConstraint] = []
         constraints.append(contentsOf: [
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 3/2),
-//            imageView.topAnchor.constraint(equalTo: imageCard.topAnchor),
-//            imageView.bottomAnchor.constraint(equalTo: imageCard.bottomAnchor),
-//            imageView.leadingAnchor.constraint(equalTo: imageCard.leadingAnchor),
-//            imageView.trailingAnchor.constraint(equalTo: imageCard.trailingAnchor),
             circleBackground.topAnchor.constraint(equalTo: imageCard.topAnchor, constant: 12),
             circleBackground.trailingAnchor.constraint(equalTo: imageCard.trailingAnchor, constant: -12),
             circleBackground.widthAnchor.constraint(equalToConstant: 25),

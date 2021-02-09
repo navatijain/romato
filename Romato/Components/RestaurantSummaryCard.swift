@@ -12,8 +12,7 @@ class RestaurantSummaryCard: UIView {
     //MARK: UI elements
     lazy var restaurantTitle: UILabel = {
         let restaurantName = UILabel()
-       // restaurantName.text = "The Stockyards on Yonge Street at York I mean Toronto which is in Ontario but is not the capital of Canada, although it is the capital of Ontario"
-       restaurantName.text = "The Stockyards "
+        restaurantName.text = "The Stockyards "
         restaurantName.font = Fonts.ofSize(.large, .semiBold)
         restaurantName.numberOfLines = 0
         restaurantName.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -23,7 +22,6 @@ class RestaurantSummaryCard: UIView {
     lazy var ratingView: RatingView = {
         let ratingView = RatingView()
         ratingView.setContentCompressionResistancePriority(.required, for: .horizontal)
-        //ratingView.setContentHuggingPriority(.defaultLow, for: .horizontal)
         return ratingView
     }()
     
@@ -62,7 +60,6 @@ class RestaurantSummaryCard: UIView {
         stackView.distribution = .fill //
         stackView.alignment = .top
         return stackView
-        
     }()
     
     lazy var addressLabel: UILabel = {
@@ -84,10 +81,8 @@ class RestaurantSummaryCard: UIView {
     }()
     
     //MARK: Functions
-    
     private func setupConstraints(){
         addSubviewsWithAutoLayout([mainStackView])
-        
         let constraints = [
             mainStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),

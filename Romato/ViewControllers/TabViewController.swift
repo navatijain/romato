@@ -8,17 +8,12 @@
 import UIKit
 
 class TabViewController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-  
         let homeVC = HomeViewController(model: HomeViewModel())
         homeVC.tabBarItem = UITabBarItem(title: "Main", image: nil, selectedImage: nil)
         viewControllers = [homeVC]
-        // Do any additional setup after loading the view.
+        
     }
-    
-
-   
-
 }

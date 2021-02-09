@@ -36,4 +36,16 @@ struct LocalizedString {
         static let bookMarkImage = "bookmark"
     }
     
+    struct Overview {
+        static let review = "reviews"
+        static let closesIn = "Closes in"
+        static let open = "Open now"
+        static let hour = "hour"
+        static let hours = "hours"
+        static let minute = "minute"
+        static let minutes = "minutes"
+        static let costForTwo = "Cost for two"
+        static let approxCost = "(approx.) without alcohol"
+    }
+    
 }

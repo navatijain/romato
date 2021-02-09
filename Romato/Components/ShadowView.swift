@@ -8,11 +8,7 @@
 import UIKit
 
 class ShadowView: UIView {
-    
-    //    private var shadowLayer: CAShapeLayer!
-    //    private var cornerRadius: CGFloat = 1.0
-    //  //  private var fillColor: UIColor = .blue // the color applied to the shadowLayer, rather than the view's backgroundColor
-    
+     
     override var intrinsicContentSize: CGSize {
         var size = super.intrinsicContentSize
         size.height = 50

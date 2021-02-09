@@ -50,7 +50,6 @@ class RatingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraints()
-        //backgroundColor = Colors.Brand.gray200
     }
     
     required init?(coder: NSCoder) {

@@ -53,7 +53,7 @@ extension CollectionView {
     
     private func collectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
-        let cellWidthHeightConstant: CGFloat = UIScreen.main.bounds.width * 0.2
+        //let cellWidthHeightConstant: CGFloat = UIScreen.main.bounds.width * 0.2
 
         layout.sectionInset = UIEdgeInsets(top: 0,
                                            left: 10,
@@ -78,7 +78,6 @@ extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-       //cell.titleLabel.text = titles[indexPath.item]
         return cell
     }
     

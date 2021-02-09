@@ -48,4 +48,36 @@ class LocationDetailsService {
             }
         }.resume()
     }
+    
+    static func getRestaurantDetails(for restaurantId: String, handler: @escaping (Result<Restaurant, Error>) -> ()){
+        guard let url = URL(string: "https://developers.zomato.com/api/v2.1/restaurant?res_id=\(restaurantId)") else {
+            handler(.failure(CustomError.Decoding))
+            return
+        }
+        
+      var request = URLRequest(url: url)
+        
+        request.setValue("04f9ace5b05be85764188952a5672d07", forHTTPHeaderField: "user-key")
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    let jsonDecoder = JSONDecoder()
+                    jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                    if let data = data, let restaurantDetails = try? jsonDecoder.decode(Restaurant.self, from: data) {
+                        print(restaurantDetails)
+                        handler(.success(restaurantDetails))
+                    } else {
+                        handler(.failure(CustomError.Decoding))
+                    }
+                } else {
+                    handler(.failure(CustomError.Service))
+                }
+            } else {
+                handler(.failure(CustomError.Decoding))
+            }
+        }.resume()
+    }
+
 }
+
+

@@ -16,10 +16,6 @@ struct LocationDetails: Codable {
     let bestRatedRestaurant: [RestaurantModel]?
 }
 
-//struct RestaurantDictionary: Codable {
-//    let restaurant: Restaurant?
-//}
-
 struct CityLocation: Codable{
     let entityType: String?
     let entityId: Int?
@@ -42,12 +38,25 @@ struct Restaurant: Codable {
     let cuisines: String?
     let averageCostForTwo: Int?
     let thumb: String?
+    let userRating: UserRating?
+    let allReviewsCount: Int?
+    let phoneNumbers: String?
+}
+
+
+struct UserRating: Codable {
+    let aggregateRating: String?
+}
+
+extension UserRating {
+    var aggregateRatingInteger: Int {
+        return aggregateRating?.convertToInteger() ?? 0
+    }
 }
 
 struct R: Codable {
     
 }
-
 
 struct RestaurantModel: Codable {
     let restaurant: Restaurant?
